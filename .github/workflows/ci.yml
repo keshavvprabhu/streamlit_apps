@@ -80,7 +80,7 @@ jobs:
       run: uv sync --dev
 
     - name: Run tests
-      run: uv run pytest -v tests/tests.py --cov=. --cov-report=xml
+      run: uv run pytest --cov=. --cov-report=xml
       continue-on-error: true
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
@@ -93,7 +93,7 @@ jobs:
     - name: Run Smoke Tests
       run: |
         uv add --dev pytest
-        uv run pytest tests.py --disable-warnings --maxfail=1
+        uv run pytest --disable-warnings --maxfail=1
     
 
   security-scan:
