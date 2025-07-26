@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        python-version: ["3.11", "3.12", "3.13"]
     
     steps:
     - name: Checkout code
@@ -89,6 +89,12 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
+
+    - name: Run Smoke Tests
+      run: |
+        uv add --dev pytest
+        uv run pytest tests.py --disable-warnings --maxfail=1
+    
 
   security-scan:
     runs-on: ubuntu-latest
