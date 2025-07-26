@@ -2,9 +2,10 @@ import pytest
 from helpers import PaymentParty
 from loguru import logger
 
+
 class TestPaymentParty:
     def setup_method(self):
-        self.payment_party = PaymentParty(locale='en_US')
+        self.payment_party = PaymentParty(locale="en_US")
 
     def test_get_name(self):
         name = self.payment_party.get_name()
