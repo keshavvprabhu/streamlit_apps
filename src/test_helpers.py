@@ -1,6 +1,7 @@
 import pytest
-from helpers import PaymentParty
 from loguru import logger
+
+from helpers import PaymentParty
 
 
 class TestPaymentParty:

@@ -1,7 +1,8 @@
 import json
 import os
-from loguru import logger
+
 from faker import Faker
+from loguru import logger
 
 
 class PaymentParty:
