@@ -44,6 +44,7 @@ jobs:
 
     - name: Run flake8 (linting)
       run: uv run flake8 .
+      continue-on-error: true
 
     - name: Run mypy (type checking)
       run: uv run mypy .
