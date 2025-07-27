@@ -158,6 +158,7 @@ jobs:
         tags: streamlit-apps:test
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+      continue-on-error: false
 
     - name: Test Docker image
       run: |
